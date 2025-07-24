@@ -1,0 +1,19 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+//Desktops/Laptops
+@media (max-width: 1250px) {
+  /* … */
+}
+
+//Tablets 
+@media (max-width: 768px) {
+  /* … */
+}
+
+//Mobile Devices
+@media (max-width: 480px) {
+  /* … */
+}
