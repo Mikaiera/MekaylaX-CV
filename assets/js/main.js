@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             container.appendChild(petal);
 
-            // Remove petal after animation completes to prevent DOM overload
-            // and create a new one to maintain the continuous effect
+            // Remove petal after animation completes to prevent DOM overloadand create a new one to maintain the continuous effect
             setTimeout(() => {
                 petal.remove();
                 createPetal(); // create a new petal
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createPetal();
         }
 
-        // Handle window resize to maintain petals (adjust their left position)
+        // Handle window resize to maintain petals 
         window.addEventListener('resize', function() {
             const petals = container.querySelectorAll('.petal');
             petals.forEach(petal => {
@@ -65,20 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // --- Mobile menu toggle (Consolidated and Corrected) ---
-    const navToggle = document.querySelector('.nav-toggle'); // Selects the hamburger button by its class
-    const navMenu = document.getElementById('nav');       // Selects the nav menu by its ID
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav'); 
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');        // Toggles the 'active' class on the nav menu
-            navToggle.classList.toggle('active');      // Toggles 'active' on the toggle button for animation
+            navMenu.classList.toggle('active'); 
+            navToggle.classList.toggle('active');
         });
 
         // Close nav when a link inside the nav is clicked
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.classList.remove('active');    // Remove 'active' from nav menu
-                navToggle.classList.remove('active');  // Remove 'active' from toggle button
+                navMenu.classList.remove('active'); 
+                navToggle.classList.remove('active'); 
             });
         });
     } else {
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const skillElement = document.createElement('div');
             skillElement.className = 'skill-item';
             skillElement.textContent = skill;
-            skillElement.style.position = 'absolute'; // Ensure absolute positioning for transform to work relative to wheel
+            skillElement.style.position = 'absolute'; 
             skillElement.style.left = '50%';
             skillElement.style.top = '50%';
             skillElement.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`; // Center then position

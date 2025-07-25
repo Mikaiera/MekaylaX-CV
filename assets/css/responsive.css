@@ -643,19 +643,19 @@
 }
 
 .custom-cursor {
-    position: fixed; /* Keep it in the viewport regardless of scrolling */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 40px; /* Size of the custom cursor container */
+    width: 40px;
     height: 40px;
-    pointer-events: none; /* ESSENTIAL: Allows clicks/interactions to pass through the custom cursor */
-    transform: translate(-50%, -50%); /* Centers the cursor icon exactly on the mouse pointer */
-    transition: transform 0.05s ease-out, opacity 0.2s ease-out; /* Smooth movement and fade-in/out */
-    z-index: 9999; /* Ensures the cursor is always on top of other content */
-    font-size: 30px; /* Size of the bug emoji */
-    line-height: 1; /* Adjust line height to center emoji vertically */
-    display: flex; /* Use flexbox to perfectly center the emoji */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out, opacity 0.2s ease-out; 
+    z-index: 9999; 
+    font-size: 30px;
+    line-height: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
 }
