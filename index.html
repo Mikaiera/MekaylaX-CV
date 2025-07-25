@@ -4,11 +4,388 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <title>MekaylaX-RESUME</title>
+    <link rel="stylesheet" href="/css/animation.css">
+    <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="/assets/project-img/favicon.png">
+    <title>Mekaylas World</title>
 </head>
 <body>
-    
+    <div class="custom-cursor">🥖</div>
+    <header>
+        <h2>Mekayla X.</h2>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <nav id="nav">
+            <ul>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about-me">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="sakura-container" id="sakura-container"></div>
+        <div class="content-container">
+            <section class="my-intro" id="my-intro">
+                <div class="hero-text">
+                    <h2>Hallo, I'm Mekayla 👋</h2>
+                    <h3 class="typing-text">IT Student</h3>
+                    <p>I designed this beautiful, functional website not just because I love clean code and great UX but also because someones got to fund my gaming habit eventually.</p>
+                    <a href="/assets/Mekayla_X_Moyikwa_CV.pdf"class="btn" download="">Get Resume</a>
+                </div>
+                <div class="hero-image">
+                    <div class="avatar">
+                        <img src="/assets/my-avatar.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-me" id="about-me">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm an aspiring developer,and lifelong tech enthusiast.From sketching ideas as a kid to writing real code today, Ive always been drawn to the intersection of creativity and technology. Now, as I pursue my BSc in Information Technology, Im turning that lifelong fascination into a career rooted in problem-solving, logic, and digital design.</p>
+                        <p>Im currently honing my skills in Python, C, Java, JavaScript, and C#, diving into everything from algorithms to game mechanics. Whether its building something from scratch or figuring out how things work under the hood, I find joy in making ideas come to life.</p>
+                        <p>I tend to observe quietly and act intentionally but when it comes to collaboration and innovation, Im all in. I value meaningful connections, clear goals, and the thrill of building something great.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <i class='bx bx-code-alt'></i>
+                            <h4>10+</h4>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class='bx bx-award'></i>
+                            <h4>3</h4>
+                            <p>Certificates</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class='bx bx-globe'></i>
+                            <h4>5</h4>
+                            <p>Languages</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-me" id="contact-me">
+                    <a href="mailto:mekaylaxm@gmail.com" title="Email"><i class='bx bxl-gmail'></i></a>
+                    <a href="https://www.linkedin.com/in/mekayla-m-988307244" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="https://discordapp.com/users/mekayla8440" target="_blank" title="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://github.com/Mikaiera" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
+                </div>
+            </section>
+
+            <section class="education" id="education">
+                <div class="section-title">
+                    <h2>Education</h2>
+                </div>
+                <div class="education-slider">
+                    <div class="slider-container" id="sliderContainer">
+                        <div class="slide">
+                            <div class="institution">
+                                <i class='bx bxs-graduation'></i>
+                                <h3>North-West University (NWU)</h3>
+                            </div>
+                            <div class="degree">BSc Information Technology</div>
+                            <div class="timeline">2023–Present (Expected Dec 2025)</div>
+
+                            <div class="coursework">
+                                <h4>Current Coursework</h4>
+                                <ul>
+                                    <li>Decision Support Systems II</li>
+                                    <li>Advanced Databases</li>
+                                    <li>Operating Systems</li>
+                                    <li>IT Developments</li>
+                                    <li>Business for Managers</li>
+                                </ul>
+                            </div>
+
+                            <div class="coursework">
+                                <h4>Completed Coursework</h4>
+                                <ul>
+                                    <li>Programming (Python, Java, C++, C#)</li>
+                                    <li>Data Structures & Algorithms</li>
+                                    <li>Discrete Mathematics</li>
+                                    <li>Statistics</li>
+                                    <li>Artificial Intelligence</li>
+                                    <li>Systems Analysis & Design</li>
+                                    <li>Data Analytics & Visualization</li>
+                                    <li>Networking</li>
+                                    <li>Cybersecurity Fundamentals</li>
+                                    <li>Accounting & Business Management</li>
+                                </ul>
+                            </div>
+
+                            <div class="key-projects">
+                                <h4>Key Projects</h4>
+                                <div class="project-item">
+                                    <p><strong>E-commerce Platform</strong></p>
+                                    <p>Inventory management with PDF reporting</p>
+                                    <p class="tech-stack">Tech: Python, Flask, SQL</p>
+                                </div>
+                                <div class="project-item">
+                                    <p><strong>Banking Database System</strong></p>
+                                    <p>SQL solution for rural banking scenario</p>
+                                </div>
+                                <div class="project-item">
+                                    <p><strong>Real-time Messenger</strong></p>
+                                    <p>Cloud-based messaging app</p>
+                                    <p class="tech-stack">Tech: C#, Firebase</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="institution">
+                                <i class='bx bxs-school'></i>
+                                <h3>UniCollege, Krugersdorp</h3>
+                            </div>
+                            <div class="degree">IT Programming Certificate</div>
+                            <div class="timeline">2022</div>
+
+                            <div class="coursework">
+                                <h4>Completed Coursework</h4>
+                                <ul>
+                                    <li>Programming Languages: Python, JavaScript, C++, C, HTML5, CSS, React.js</li>
+                                    <li>Operating Systems: Linux (Introductory Level)</li>
+                                    <li>Software Engineering</li>
+                                    <li>Artificial Intelligence</li>
+                                    <li>Robotics</li>
+                                    <li>Databases</li>
+                                    <li>Shortcourse: Customer Relationship Management (Distinction)</li>
+                                </ul>
+                            </div>
+                            <div class="certifications">
+                            <h3><i class='bx bx-certification'></i> Certifications</h3>
+                            <div class="cert-item">
+                                <i class='bx bx-medal'></i>
+                                <div class="cert-details">
+                                    <a href="https://www.credly.com/badges/9bec8702-5df6-4e21-8ce4-2bf249085d1d/public_url" target="_blank" rel="noopener noreferrer">
+                                        <h4>JavaScript Specialist</h4>
+                                    </a>
+                                    
+                                    <p>Certiport | 2022</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <i class='bx bx-medal'></i>
+                                <div class="cert-details">
+                                    <a href="https://www.credly.com/badges/de27b5aa-e522-4ef3-81b5-0ee661c1f6d3/public_url" target="_blank" rel="noopener noreferrer">
+                                       <h4>Software Development</h4> 
+                                    </a>
+                                    <p>Certiport | 2022</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <i class='bx bx-medal'></i>
+                                <div class="cert-details">
+                                    <h4>Customer Relationship Management (Distinction)</h4>
+                                    <p>Unicollege | 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn" id="prevBtn"><i class='bx bx-chevron-left'></i></button>
+                        <button class="slider-btn" id="nextBtn"><i class='bx bx-chevron-right'></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills-wheel" id="skills">
+                <div class="section-title">
+                    <h2>Technical Skills</h2>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-center"><i class='bx bx-code-alt'></i> Languages</div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class='bx bx-layout'></i> Frameworks</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">Firebase</span>
+                                <span class="skill-tag">Bootstrap</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class='bx bx-cog'></i> Tools</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Arduino</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Windows</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class='bx bx-brain'></i> Concepts</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">Full-Stack Dev</span>
+                                <span class="skill-tag">OOP</span>
+                                <span class="skill-tag">Database Design</span>
+                                <span class="skill-tag">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                
+            </section>
+
+            <section class="projects" id="projects">
+    <div class="section-title">
+        <h2>My Projects</h2>
+    </div>
+    <div class="project-timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="project-card">
+                    <img src="/assets/project-img/comic-store.png" alt="Project 1 Preview" class="project-image">
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p class="tech-used">Tech: Python • Flask • SQL Server • mathplotlib </p>
+                        <div class="project-status" data-status="complete">Complete</div>
+                        <div class="project-description">
+                            <p>Developed a full-stack e-commerce platform featuring inventory management, user authentication, shopping cart functionality, and PDF report generation for sales and inventory data. Designed with a focus on intuitive user experience and robust data handling.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mikaiera/CMPG223-Group-16-Project" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="project-card">
+                    <img src="/assets/project-img/text-app.png" alt="Project 2 Preview" class="project-image">
+                    <div class="project-info">
+                        <h3>Real-time Messenger App</h3>
+                        <p class="tech-used">Tech: C# • Firebase • WPF</p>
+                        <div class="project-status" data-status="complete">Complete</div>
+                        <div class="project-description">
+                            <p>Created a real-time messaging application with a user-friendly interface. Utilized Firebase for backend services to enable instant message delivery and persistent storage. Focused on efficient data synchronization and a smooth chat experience.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mikaiera/Group-30-Packet_Pioneers" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="project-card">
+                    <img src="/assets/project-img/inprogress.png" alt="Project 3 Preview" class="project-image">
+                    <div class="project-info">
+                        <h3>Banking Database System</h3>
+                        <p class="tech-used">Tech: SQL • Oracle</p>
+                        <div class="project-status" data-status="ongoing">To be Added</div>
+                        <div class="project-description">
+                            <p>Designed and implemented a robust SQL database solution for a simulated rural banking scenario. This involved creating complex schemas, optimizing queries, and ensuring data integrity for transactions, accounts, and customer information.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://youtu.be/xvFZjo5PgG0?si=vWySoXoY1M8fZG0x" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="project-card">
+                    <img src="/assets/project-img/cinetrack.png" alt="Project 4 Preview" class="project-image">
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p class="tech-used">Tech: React 18 • TMDB API • Appwrite • TailwindCSS • Bootstrap</p>
+                        <div class="project-status" data-status="paused">Paused</div>
+                        <div class="project-status" data-status="ongoing">Ongoing</div>
+                        <div class="project-description">
+                            <p>A React movie discovery dashboard that displays trending movies(with their rating score, year of release and movie language ) and tracks top user searches. Built with Vite, TMDB API, and Appwrite database.Created as a practice project to learn React hooks, API integration, and database operations. [To be further enhanced!]</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://cinetrack-meka.netlify.app/" target="_blank" class="btn small-btn">Live Demo <i class='bx bx-link-external'></i></a>
+                            <a href="https://github.com/Mikaiera/MyCodePortfolio/tree/main/intermediate/react-projects/Movie-Application" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="project-card">
+                    <img src="/assets/project-img/robotics.jpg" alt="Project 5 Preview" class="project-image">
+                    <div class="project-info">
+                        <h3>4WD Obstacle-Avoidance Robot</h3>
+                        <p class="tech-used">Tech: C++ • Arduino UNO • Ultrasonic Sensors</p>
+                        <div class="project-status" data-status="complete">Complete</div>
+                        <div class="project-status" data-status="ongoing"> Will Add Code</div>
+                        <div class="project-description">
+                            <p>This project involved designing and programming a 4WD robot capable of autonomously navigating and avoiding obstacles using ultrasonic sensors and an Arduino UNO microcontroller. It demonstrates practical application of embedded systems and basic robotics principles.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mikaiera/task-cli" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="project-card">
+                    <img src="/assets/project-img/stopwatch_screenshot.png" alt="Project 6 Preview- Stopwatch" class="project-image">
+                    <div class="project-info">
+                        <h3>Stopwatch</h3>
+                        <p class="tech-used">Tech: JavaScript • HTML • CSS</p>
+                        <div class="project-status" data-status="complete">Complete</div>
+                        <div class="project-description">
+                            <p>A modern stopwatch application with lap functionality and keyboard controls, built with pure HTML, CSS, and JavaScript during my web development journey.My first exploration into interactive web applications with timing logic and user feedback systems. It represents my growing understanding of DOM manipulation and CSS animations.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://stopwatch-meka.netlify.app/" target="_blank" class="btn small-btn">Live Demo <i class='bx bx-link-external'></i></a>
+                            <a href="https://github.com/Mikaiera/MyCodePortfolio/tree/main/intermediate/stop-watch" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="view-all-projects">
+        <a href="https://github.com/Mikaiera/MyCodePortfolio" target="_blank" class="btn large-btn">My Code Portfolio<i class='bx bxl-github'></i></a>
+    </div>
+    </main>
+
+    <footer id="footer">
+        <p>© Copyright 2025 by Mekayla. All rights reserved</p>
+    </footer>
     <script src="/js/main.js"></script>
 </body>
 </html>

@@ -1,20 +1,330 @@
-*{
-    margin:0;
-    padding:0;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
+:root {
+    --primary: #E68A94;  
+    --primary-light: #FCE5E7;
+    --primary-dark: #C75C6E;
+
+    --secondary: #F1E4D1;
+    --accent: #262626;
+
+    --dark: #1A1A1A; 
+    --light: #FFF8F6; 
+    
+    --text: #1E1E1E;
+    --text-light: #666666; 
+}
+
 
 img, picture, video, canvas, svg {
-  display: block;
   max-width: 100%;
+  display: block;
+  height: auto;
 }
 
-h1 {
-  font-size: 2.5rem;
+body {
+  cursor: none;
+  background-color: white;
+  color: #2e2e2e;
+  line-height: 1.6;
+  padding-top: 60px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  background: rgb(41, 41, 42);
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  z-index: 100;
+  height: 100px; 
+}
+
+nav#nav {
+  padding: 0em 4em;
+  display: flex;
+  justify-content:space-around;
+  z-index: 50;
+  width: auto;
+}
+
+nav#nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav#nav ul li a {
+  font-weight: bold;
+  font-size: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white; /* Default link color in header */
+  text-decoration: none;
+  transition: 0.3s ease;
+  padding: 5px 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #e49fb3;
+  text-decoration: underline;
+}
+
+h1, h2{
+  margin: 0;
+  font-size: 2rem;
   font-weight: bold;
   color: #e49fb3;
 }
 
- ul {
+ul {
   padding-left: 1.2rem;
+}
+
+.typing-container h2 {
+    font-size: 2.5rem;
+    color: #e49fb3;
+    margin-bottom: 1rem;
+}
+
+.typing-container h3 {
+    font-size: 1.5rem;
+    color: #9c27b0;
+    margin-bottom: 1.5rem;
+}
+
+.typing-container p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.typing-container{
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.typing-text {
+  font-size: 2.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-right: .12em solid black;
+  white-space: nowrap ;
+  letter-spacing: .12em;
+  animation: typing 2s steps(35, end),
+              blink-caret .70s step-end infinite;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.project-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 0;
+}
+
+.project-timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--primary-light);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+}
+
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    width: 50%;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 40px;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid var(--card-background); /* Matches card background */
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -11px; /* Align with the line */
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -11px; /* Align with the line */
+}
+
+.timeline-content {
+    background: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--border-color);
+    position: relative; /* Needed for z-index of project-info */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Hide overflowing description initially */
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent look */
+    object-fit: cover; /* Ensures image covers the area */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project-info h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.project-info .tech-used {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.project-description {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    margin-top: 0; /* No margin when collapsed */
+    color: var(--text-color);
+}
+
+.project-status {
+    display: inline-block;
+    padding: 4px 8px; 
+    margin-top: 5px;
+    margin-bottom: 10px; 
+    border-radius: 5px; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white; 
+    text-align: center;
+}
+
+/* Colour for status */
+.project-status[data-status="complete"] {
+    background-color: #28a745;
+}
+.project-status[data-status="ongoing"] {
+    background-color: #ffc107;
+    color: #333;
+}
+.project-status[data-status="planned"] {
+    background-color: #007bff;
+}
+
+.project-status[data-status="paused"] {
+    background-color: #6c757d; 
+}
+
+.project-card:hover .project-description {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.project-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn.small-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: var(--primary);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.small-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn.small-btn i {
+    font-size: 1rem;
+}
+
+.view-all-projects {
+    margin-top: 60px;
+}
+
+.btn.large-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn.large-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
 }
