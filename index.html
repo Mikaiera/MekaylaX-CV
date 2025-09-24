@@ -13,9 +13,9 @@
     <title>Mekaylas World</title>
 </head>
 <body>
-    <div class="custom-cursor">🥖</div>
+    <div class="custom-cursor">🧋</div>
     <header>
-        <h2>Mekayla X.</h2>
+        <h1>Mekayla X.</h1>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span class="hamburger"></span>
             <span class="hamburger"></span>
@@ -24,7 +24,7 @@
         <nav id="nav">
             <ul>
                 <li><a href="#main">Home</a></li>
-                <li><a href="#about-me">About</a></li>
+                <li><a href="">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="avatar">
-                        <img src="assets/my-avatar.png" alt="">
+                        <img src="assets/my-avatar.png" alt="Mekaylas Animated Avatar">
                     </div>
                 </div>
             </section>
@@ -80,9 +80,9 @@
                 </div>
                 <div class="contact-me" id="contact-me">
                     <a href="mailto:mekaylaxm@gmail.com" title="Email"><i class='bx bxl-gmail'></i></a>
-                    <a href="https://www.linkedin.com/in/mekayla-m-988307244" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
-                    <a href="https://discordapp.com/users/mekayla8440" target="_blank" title="Discord"><i class='bx bxl-discord-alt'></i></a>
-                    <a href="https://github.com/Mikaiera" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/mekayla-m-988307244" target="_blank" rel="noopener noreferrer"  title="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="https://discordapp.com/users/mekayla8440" target="_blank" rel="noopener noreferrer" title="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://github.com/Mikaiera" target="_blank" rel="noopener noreferrer"  title="GitHub"><i class='bx bxl-github'></i></a>
                 </div>
             </section>
 
@@ -199,9 +199,14 @@
                     </div>
 
                     <div class="slider-controls">
-                        <button class="slider-btn" id="prevBtn"><i class='bx bx-chevron-left'></i></button>
-                        <button class="slider-btn" id="nextBtn"><i class='bx bx-chevron-right'></i></button>
+                        <button class="slider-btn" id="prevBtn" aria-label="Previous Slide">
+                            <i class='bx bx-chevron-left'></i>
+                        </button>
+                        <button class="slider-btn" id="nextBtn" aria-label="Next Slide">
+                            <i class='bx bx-chevron-right'></i>
+                        </button>
                     </div>
+
                 </div>
             </section>
 
@@ -211,7 +216,7 @@
                 </div>
                 <div class="wheel-container">
                     <div class="wheel">
-                        <div class="wheel-center"><i class='bx bx-code-alt'></i> Languages</div>
+                        <div class="wheel-center"><i class='bx bx-code-alt'></i></div>
                         </div>
 
                         <div class="skill-category">
@@ -266,7 +271,7 @@
                             <p>Developed a full-stack e-commerce platform featuring inventory management, user authentication, shopping cart functionality, and PDF report generation for sales and inventory data. Designed with a focus on intuitive user experience and robust data handling.</p>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Mikaiera/CMPG223-Group-16-Project" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                            <a href="https://github.com/Mikaiera/CMPG223-Group-16-Project" target="_blank" rel="noopener noreferrer" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
@@ -286,7 +291,7 @@
                             <p>Created a real-time messaging application with a user-friendly interface. Utilized Firebase for backend services to enable instant message delivery and persistent storage. Focused on efficient data synchronization and a smooth chat experience.</p>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Mikaiera/Group-30-Packet_Pioneers" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                            <a href="https://github.com/Mikaiera/Group-30-Packet_Pioneers" target="_blank" rel="noopener noreferrer" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
@@ -306,7 +311,7 @@
                             <p>Designed and implemented a robust SQL database solution for a simulated rural banking scenario. This involved creating complex schemas, optimizing queries, and ensuring data integrity for transactions, accounts, and customer information.</p>
                         </div>
                         <div class="project-links">
-                            <a href="https://youtu.be/xvFZjo5PgG0?si=vWySoXoY1M8fZG0x" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                            <a href="https://youtu.be/xvFZjo5PgG0?si=vWySoXoY1M8fZG0x" target="_blank" rel="noopener noreferrer"  class="btn small-btn">Code <i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
@@ -327,8 +332,9 @@
                             <p>A React movie discovery dashboard that displays trending movies(with their rating score, year of release and movie language ) and tracks top user searches. Built with Vite, TMDB API, and Appwrite database.Created as a practice project to learn React hooks, API integration, and database operations. [To be further enhanced!]</p>
                         </div>
                         <div class="project-links">
-                            <a href="https://cinetrack-meka.netlify.app/" target="_blank" class="btn small-btn">Live Demo <i class='bx bx-link-external'></i></a>
-                            <a href="https://github.com/Mikaiera/MyCodePortfolio/tree/main/intermediate/react-projects/Movie-Application" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                            <a href="https://cinetrack-meka.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn small-btn">Live Demo <i class='bx bx-link-external'></i></a>
+
+                            <a href="https://github.com/Mikaiera/MyCodePortfolio/tree/main/intermediate/react-projects/Movie-Application" target="_blank" rel="noopener noreferrer" class="btn small-btn">Code<i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
@@ -349,7 +355,7 @@
                             <p>This project involved designing and programming a 4WD robot capable of autonomously navigating and avoiding obstacles using ultrasonic sensors and an Arduino UNO microcontroller. It demonstrates practical application of embedded systems and basic robotics principles.</p>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Mikaiera/task-cli" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                            <a href="https://github.com/Mikaiera/task-cli" target="_blank" rel="noopener noreferrer" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
@@ -369,8 +375,8 @@
                             <p>A modern stopwatch application with lap functionality and keyboard controls, built with pure HTML, CSS, and JavaScript during my web development journey.My first exploration into interactive web applications with timing logic and user feedback systems. It represents my growing understanding of DOM manipulation and CSS animations.</p>
                         </div>
                         <div class="project-links">
-                            <a href="https://stopwatch-meka.netlify.app/" target="_blank" class="btn small-btn">Live Demo <i class='bx bx-link-external'></i></a>
-                            <a href="https://github.com/Mikaiera/MyCodePortfolio/tree/main/intermediate/stop-watch" target="_blank" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
+                            <a href="https://stopwatch-meka.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn small-btn">Live Demo <i class='bx bx-link-external'></i></a>
+                            <a href="https://github.com/Mikaiera/MyCodePortfolio/tree/main/intermediate/stop-watch" target="_blank" rel="noopener noreferrer" class="btn small-btn">Code <i class='bx bxl-github'></i></a>
                         </div>
                     </div>
                 </div>
@@ -379,7 +385,7 @@
 
     </div>
     <div class="view-all-projects">
-        <a href="https://github.com/Mikaiera/MyCodePortfolio" target="_blank" class="btn large-btn">My Code Portfolio<i class='bx bxl-github'></i></a>
+        <a href="https://github.com/Mikaiera/MyCodePortfolio" target="_blank" rel="noopener noreferrer" class="btn large-btn">My Code Portfolio<i class='bx bxl-github'></i></a>
     </div>
     </main>
 

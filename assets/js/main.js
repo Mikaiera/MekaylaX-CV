@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Sakura Petals Functionality ---
+    // Sakura Petals Functionality
     const container = document.getElementById('sakura-container');
     const petalCount = 35;
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- Mobile menu toggle (Consolidated and Corrected) ---
+    //Mobile menu toggle 
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.getElementById('nav'); 
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- Education slider functionality ---
+    // Education slider functionality
     const sliderContainer = document.getElementById('sliderContainer');
     const slides = document.querySelectorAll('.slide');
     const prevBtn = document.getElementById('prevBtn');
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Skills wheel positioning ---
     const wheel = document.querySelector('.wheel');
     const skills = [
-        "Python", "Java", "JavaScript", "C++", "C#", "SQL", "HTML/CSS",
+        "Python", "Java", "JavaScript", "C++", "C#", "SQL",
     ];
 
     if (wheel) {
@@ -147,17 +147,37 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn("Skills wheel element with class 'wheel' not found. Skills wheel will not be populated.");
     }
 
+    // Custom
     const customCursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', (e) => {
 
-            customCursor.style.left = e.clientX + 'px';
-            customCursor.style.top = e.clientY + 'px';
-        });
-        document.addEventListener('mouseleave', () => {
-            customCursor.style.opacity = '0';
-        });
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+    });
+    document.addEventListener('mouseleave', () => {
+        customCursor.style.opacity = '0';
+    });
 
-        document.addEventListener('mouseenter', () => {
-            customCursor.style.opacity = '1';
-        });
-});
+    document.addEventListener('mouseenter', () => {
+        customCursor.style.opacity = '1';
+    });
+
+    // Remove the custom cursor from view on mobile devices after a user clicks on something.
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    if (isMobile) {
+    const cursor = document.querySelector('.custom-cursor');
+    
+    document.addEventListener('touchstart', (e) => {
+        cursor.style.display = 'block';
+        cursor.style.left = e.touches[0].clientX + 'px';
+        cursor.style.top = e.touches[0].clientY + 'px';
+        
+        setTimeout(() => {
+        cursor.style.display = 'none';
+        }, 2000);
+    });
+    }
+
+   }
+);
