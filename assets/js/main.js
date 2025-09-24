@@ -4,18 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('sakura-container');
     const petalCount = 35;
 
-    // Check if sakura-container exists before trying to create petals
     if (container) {
         function createPetal() {
             const petal = document.createElement('div');
             petal.classList.add('petal');
 
-            // Random size between 10px and 25px
             const size = Math.random() * 15 + 10;
             petal.style.width = `${size}px`;
             petal.style.height = `${size}px`;
 
-            // Random position across the width of the screen
             const leftPosition = Math.random() * 100;
             petal.style.left = `${leftPosition}%`;
 
@@ -25,108 +22,113 @@ document.addEventListener('DOMContentLoaded', function() {
             const sway = (Math.random() - 0.5) * 15;
             petal.style.setProperty('--sway', sway);
 
-            // Random animation duration (10-20 seconds)
             const duration = Math.random() * 10 + 10;
             petal.style.animationDuration = `${duration}s`;
-
-            // Random delay (0-5 seconds)
             const delay = Math.random() * 5;
             petal.style.animationDelay = `${delay}s`;
-
-            // Always use the fall animation
             petal.style.animationName = 'fall';
 
             container.appendChild(petal);
 
-            // Remove petal after animation completes to prevent DOM overloadand create a new one to maintain the continuous effect
             setTimeout(() => {
                 petal.remove();
-                createPetal(); // create a new petal
-            }, duration * 1000 + 500); // duration is in seconds, convert to ms
+                createPetal();
+            }, duration * 1000 + 500);
         }
 
-        // Create initial petals
-        for (let i = 0; i < petalCount; i++) {
-            createPetal();
-        }
+        for (let i = 0; i < petalCount; i++) createPetal();
 
-        // Handle window resize to maintain petals 
         window.addEventListener('resize', function() {
-            const petals = container.querySelectorAll('.petal');
-            petals.forEach(petal => {
-                const leftPosition = Math.random() * 100;
-                petal.style.left = `${leftPosition}%`;
+            container.querySelectorAll('.petal').forEach(petal => {
+                petal.style.left = Math.random() * 100 + '%';
             });
         });
-    } else {
-        console.warn("Sakura container with ID 'sakura-container' not found. Sakura animation will not run.");
     }
 
-
-    //Mobile menu toggle 
+    // Mobile Menu
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.getElementById('nav'); 
 
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active'); 
             navToggle.classList.toggle('active');
         });
 
-        // Close nav when a link inside the nav is clicked
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', () => {
                 navMenu.classList.remove('active'); 
                 navToggle.classList.remove('active'); 
             });
         });
-    } else {
-        console.warn("Mobile menu elements ('.nav-toggle' or 'nav#nav') not found. Mobile menu toggle will not function.");
     }
 
+    // Education Cards Functionality
+    const eduCards = document.querySelectorAll('.edu-card');
 
-    // Education slider functionality
-    const sliderContainer = document.getElementById('sliderContainer');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    function generateCardPetals(card, count = 6) {
+        // Remove existing card petals
+        card.querySelectorAll('.card-petal').forEach(p => p.remove());
 
-    if (sliderContainer && slides.length > 0 && prevBtn && nextBtn) {
-        let currentSlide = 0;
-        const slideCount = slides.length;
+        for (let i = 0; i < count; i++) {
+            const petal = document.createElement('div');
+            petal.classList.add('card-petal');
 
-        function goToSlide(index) {
-            sliderContainer.style.transform = `translateX(-${index * 100}%)`;
-            currentSlide = index;
+            petal.style.left = Math.random() * 90 + '%';
+            petal.style.top = Math.random() * 20 + '%';
+            petal.style.width = 8 + Math.random() * 8 + 'px';
+            petal.style.height = 8 + Math.random() * 8 + 'px';
+            petal.style.opacity = 0.4 + Math.random() * 0.4;
+            petal.style.animationDuration = 4 + Math.random() * 3 + 's';
+            petal.style.animationDelay = Math.random() * 0.5 + 's';
+
+            card.appendChild(petal);
         }
-
-        prevBtn.addEventListener('click', function() {
-            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-            goToSlide(currentSlide);
-        });
-
-        nextBtn.addEventListener('click', function() {
-            currentSlide = (currentSlide + 1) % slideCount;
-            goToSlide(currentSlide);
-        });
-
-        // Initialize slider to the first slide
-        goToSlide(0);
-
-    } else {
-        console.warn("Slider elements not found. Check your HTML IDs and classes for sliderContainer, slides, prevBtn, nextBtn.");
     }
 
+    eduCards.forEach(card => {
+        const header = card.querySelector('.card-header');
+        const body = card.querySelector('.card-body');
+        const closeBtn = card.querySelector('.close-card');
 
-    // --- Skills wheel positioning ---
+        header.addEventListener('click', () => {
+            // Close other cards
+            eduCards.forEach(c => {
+                const b = c.querySelector('.card-body');
+                if (c !== card) {
+                    b.style.maxHeight = null;
+                    c.classList.remove('active');
+                    c.querySelectorAll('.card-petal').forEach(p => p.remove());
+                }
+            });
+
+            if (card.classList.contains('active')) {
+                body.style.maxHeight = null;
+                card.classList.remove('active');
+                card.querySelectorAll('.card-petal').forEach(p => p.remove());
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+                card.classList.add('active');
+                generateCardPetals(card, 6);
+            }
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            body.style.maxHeight = null;
+            card.classList.remove('active');
+            card.querySelectorAll('.card-petal').forEach(p => p.remove());
+        });
+    });
+
+
+    // Skills Wheel
     const wheel = document.querySelector('.wheel');
-    const skills = [
-        "Python", "Java", "JavaScript", "C++", "C#", "SQL",
-    ];
+    const skills = ["Python", "Java", "JavaScript", "C++", "C#", "SQL"];
 
     if (wheel) {
         const angleIncrement = (2 * Math.PI) / skills.length;
-        const radius = 120; // Distance from center
+        const radius = 120;
 
         skills.forEach((skill, index) => {
             const angle = angleIncrement * index;
@@ -139,45 +141,55 @@ document.addEventListener('DOMContentLoaded', function() {
             skillElement.style.position = 'absolute'; 
             skillElement.style.left = '50%';
             skillElement.style.top = '50%';
-            skillElement.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`; // Center then position
+            skillElement.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
 
             wheel.appendChild(skillElement);
         });
-    } else {
-        console.warn("Skills wheel element with class 'wheel' not found. Skills wheel will not be populated.");
     }
 
-    // Custom
+    // Custom Cursor 
     const customCursor = document.querySelector('.custom-cursor');
     document.addEventListener('mousemove', (e) => {
-
         customCursor.style.left = e.clientX + 'px';
         customCursor.style.top = e.clientY + 'px';
     });
-    document.addEventListener('mouseleave', () => {
-        customCursor.style.opacity = '0';
-    });
+    document.addEventListener('mouseleave', () => { customCursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { customCursor.style.opacity = '1'; });
 
-    document.addEventListener('mouseenter', () => {
-        customCursor.style.opacity = '1';
-    });
-
-    // Remove the custom cursor from view on mobile devices after a user clicks on something.
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
     if (isMobile) {
-    const cursor = document.querySelector('.custom-cursor');
-    
-    document.addEventListener('touchstart', (e) => {
-        cursor.style.display = 'block';
-        cursor.style.left = e.touches[0].clientX + 'px';
-        cursor.style.top = e.touches[0].clientY + 'px';
-        
-        setTimeout(() => {
-        cursor.style.display = 'none';
-        }, 2000);
-    });
+        document.addEventListener('touchstart', (e) => {
+            customCursor.style.display = 'block';
+            customCursor.style.left = e.touches[0].clientX + 'px';
+            customCursor.style.top = e.touches[0].clientY + 'px';
+            setTimeout(() => { customCursor.style.display = 'none'; }, 2000);
+        });
     }
 
-   }
-);
+    //Stat-Box For Random Facts about me 
+    const interests = [
+        { title: "Learning", desc: "Exploring Operating Systems 🖥️", icon: "bx bx-code-alt" },
+        { title: "Reading", desc: "Currently Reading: Fundamentals Of Aerospace Engineering 📚", icon: "bx bx-book" },
+        { title: "Music", desc: "Been listening to alot of English Rock Bands and Alt-Indielately 🎧", icon: "bx bx-headphone" },
+        { title: "Art", desc: "I unwind by sketching and writing 🎨", icon: "bx bx-brush" },
+        { title: "Gaming", desc: "Strategy, RPG and Open-World games 🎮", icon: "bx bx-game" }
+    ];
+
+    let index = 0;
+    const titleEl = document.getElementById('interest-title');
+    const descEl = document.getElementById('interest-desc');
+    const iconEl = document.querySelector('#recent-interests i');
+
+    function updateInterest() {
+        const interest = interests[index];
+        titleEl.textContent = interest.title;
+        descEl.textContent = interest.desc;
+        iconEl.className = interest.icon;
+
+        index = (index + 1) % interests.length;
+    }
+
+    setInterval(updateInterest, 4000); 
+
+    // Spotify Addition (Next Update)
+});

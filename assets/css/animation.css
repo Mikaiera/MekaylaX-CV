@@ -8,7 +8,7 @@ main {
     position: relative;
     min-height: 100vh;
     padding: 4rem 5%;
-    background: linear-gradient(to bottom, #fce1ff, #dcecff);
+    background: linear-gradient(to bottom, #fce1ff, #f8fbea);
     overflow: hidden;
 }
 /* Sakura Petals Container */
@@ -40,6 +40,22 @@ main {
     max-width: 1200px;
     margin: 0 auto;
 }
+/* Education Card Container */
+.edu-card .card-petal {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--primary);
+    pointer-events: none;
+    z-index: 9999;
+    animation-name: drift;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.see-more {
+  display: block;
+  animation: bounce 1.5s infinite;
+}
+
 /* Typing Animation */
 @keyframes typing {
   from { width: 0; }
@@ -72,6 +88,24 @@ main {
         transform: rotate(360deg);
     }
 }
+@keyframes drift {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(80px) rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 /* Footer */
 footer {
   text-align: center;

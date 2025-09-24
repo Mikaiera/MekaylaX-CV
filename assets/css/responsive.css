@@ -106,7 +106,7 @@
   .about-stats {
     flex: 1 1 200px;
     min-width: 200px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
 
@@ -126,7 +126,9 @@
   .education-slider {
     max-width: 600px;
   }
-
+  .read-more-hint {
+    display: block;
+  }
   .slide {
     padding: 2rem;
   }
@@ -469,9 +471,9 @@
         padding: 0;
         text-align: center;
     }
-    .about-stats {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 0.8rem;
+     .about-stats {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
     .stat-box {
         padding: 1rem;
@@ -516,6 +518,9 @@
     .timeline {
         font-size: 0.9rem;
         padding: 6px 10px;
+    }
+    .read-more-hint {
+        display: block;
     }
     .coursework h4, .key-projects h4 {
         font-size: 1.1rem;
