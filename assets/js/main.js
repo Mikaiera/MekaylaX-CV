@@ -121,6 +121,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    document.querySelectorAll('.see-more').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const card = this.closest('.edu-card');
+            const body = card.querySelector('.card-body');
+            const isActive = card.classList.contains('active');
+
+            // Close other cards
+            eduCards.forEach(c => {
+                const b = c.querySelector('.card-body');
+                const otherLink = c.querySelector('.see-more');
+                if (c !== card) {
+                    b.style.maxHeight = null;
+                    c.classList.remove('active');
+                    c.querySelectorAll('.card-petal').forEach(p => p.remove());
+                    if (otherLink) otherLink.textContent = 'See More';
+                }
+            });
+
+            if (isActive) {
+                body.style.maxHeight = null;
+                card.classList.remove('active');
+                card.querySelectorAll('.card-petal').forEach(p => p.remove());
+                this.textContent = 'See More';
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+                card.classList.add('active');
+                generateCardPetals(card, 6);
+                this.textContent = 'Show Less';
+            }
+        });
+    });
+
 
     // Skills Wheel
     const wheel = document.querySelector('.wheel');

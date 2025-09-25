@@ -306,14 +306,28 @@
 }
 
 .edu-card .card-body {
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.3s ease;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    padding: 0 20px;
+    pointer-events: none;
 }
 
 .edu-card.active .card-body {
+    max-height: 1500px; /* Large enough for content */
     opacity: 1;
-    transform: translateY(0);
+    padding: 20px;
+    pointer-events: auto;
+}
+
+.edu-card .close-card {
+    display: none;
+    margin-top: 10px;
+}
+
+.edu-card.active .close-card {
+    display: block;
 }
 
 .degree {
