@@ -3,9 +3,6 @@
     main {
         padding: 4rem 5%;
     }
-    .see-more {
-      display: none;
-    }
     .custom-cursor {
         display: flex; /* Display as flex on desktops */
     }

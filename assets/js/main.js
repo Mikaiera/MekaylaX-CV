@@ -87,56 +87,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     eduCards.forEach(card => {
-        const header = card.querySelector('.card-header');
         const body = card.querySelector('.card-body');
         const closeBtn = card.querySelector('.close-card');
-
-        header.addEventListener('click', () => {
-            // Close other cards
-            eduCards.forEach(c => {
-                const b = c.querySelector('.card-body');
-                if (c !== card) {
-                    b.style.maxHeight = null;
-                    c.classList.remove('active');
-                    c.querySelectorAll('.card-petal').forEach(p => p.remove());
-                }
-            });
-
-            if (card.classList.contains('active')) {
-                body.style.maxHeight = null;
-                card.classList.remove('active');
-                card.querySelectorAll('.card-petal').forEach(p => p.remove());
-            } else {
-                body.style.maxHeight = body.scrollHeight + "px";
-                card.classList.add('active');
-                generateCardPetals(card, 6);
-            }
-        });
+        const seeMoreBtn = card.querySelector('.see-more');
 
         closeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             body.style.maxHeight = null;
             card.classList.remove('active');
             card.querySelectorAll('.card-petal').forEach(p => p.remove());
+            if (seeMoreBtn) {
+                seeMoreBtn.textContent = 'See More';
+                seeMoreBtn.setAttribute('aria-expanded', 'false');
+            }
         });
-    });
 
-    document.querySelectorAll('.see-more').forEach(link => {
-        link.addEventListener('click', function (e) {
+        seeMoreBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            const card = this.closest('.edu-card');
-            const body = card.querySelector('.card-body');
             const isActive = card.classList.contains('active');
 
             // Close other cards
             eduCards.forEach(c => {
-                const b = c.querySelector('.card-body');
-                const otherLink = c.querySelector('.see-more');
                 if (c !== card) {
-                    b.style.maxHeight = null;
                     c.classList.remove('active');
+                    c.querySelector('.card-body').style.maxHeight = null;
                     c.querySelectorAll('.card-petal').forEach(p => p.remove());
-                    if (otherLink) otherLink.textContent = 'See More';
+                    const otherBtn = c.querySelector('.see-more');
+                    if (otherBtn) {
+                        otherBtn.textContent = 'See More';
+                        otherBtn.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
 
@@ -145,15 +125,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.classList.remove('active');
                 card.querySelectorAll('.card-petal').forEach(p => p.remove());
                 this.textContent = 'See More';
+                this.setAttribute('aria-expanded', 'false');
             } else {
                 body.style.maxHeight = body.scrollHeight + "px";
                 card.classList.add('active');
                 generateCardPetals(card, 6);
                 this.textContent = 'Show Less';
+                this.setAttribute('aria-expanded', 'true');
             }
         });
     });
-
 
     // Skills Wheel
     const wheel = document.querySelector('.wheel');
