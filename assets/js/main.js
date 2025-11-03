@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             customCursor.style.display = 'block';
             customCursor.style.left = e.touches[0].clientX + 'px';
             customCursor.style.top = e.touches[0].clientY + 'px';
-            setTimeout(() => { customCursor.style.display = 'none'; }, 2000);
+            setTimeout(() => { customCursor.style.display = 'none'; }, 1500);
         });
     }
 
