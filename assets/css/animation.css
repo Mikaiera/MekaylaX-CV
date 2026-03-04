@@ -8,7 +8,7 @@ main {
     position: relative;
     min-height: 100vh;
     padding: 4rem 5%;
-    background: linear-gradient(to bottom, #fce1ff, #f8fbea);
+    background: linear-gradient(to bottom, #fbf5fc, #f8f7f8);
     overflow: hidden;
 }
 /* Sakura Petals Container */
@@ -30,7 +30,7 @@ main {
     opacity: 0.8;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    box-shadow: 0 0 8px rgba(228, 159, 178, 0.601);
+    box-shadow: 0 0 8px rgba(228, 159, 178, 0.788);
     transform-origin: center; 
 }
 /* Content Container */
@@ -104,12 +104,4 @@ main {
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: var(--dark);
-  color: var(--light);
 }

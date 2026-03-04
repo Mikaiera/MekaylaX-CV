@@ -88,19 +88,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     eduCards.forEach(card => {
         const body = card.querySelector('.card-body');
-        const closeBtn = card.querySelector('.close-card');
         const seeMoreBtn = card.querySelector('.see-more');
 
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            body.style.maxHeight = null;
-            card.classList.remove('active');
-            card.querySelectorAll('.card-petal').forEach(p => p.remove());
-            if (seeMoreBtn) {
-                seeMoreBtn.textContent = 'See More';
-                seeMoreBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
+        const closeBtn = card.querySelector('.close-card');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                body.style.maxHeight = null;
+                card.classList.remove('active');
+                card.querySelectorAll('.card-petal').forEach(p => p.remove());
+                if (seeMoreBtn) {
+                    seeMoreBtn.textContent = 'See More';
+                    seeMoreBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
 
         seeMoreBtn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Skills Wheel
     const wheel = document.querySelector('.wheel');
-    const skills = ["Python", "Java", "JavaScript", "C++", "C#", "SQL"];
+    const skills = ["Python", "Java", "JavaScript", "C++", "C#"];
 
     if (wheel) {
         const angleIncrement = (2 * Math.PI) / skills.length;
@@ -182,11 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Stat-Box For Random Facts about me 
     const interests = [
-        { title: "Learning", desc: "Exploring Operating Systems 🖥️", icon: "bx bx-code-alt" },
+        { title: "Learning", desc: "More about operating Systems 🖥️", icon: "bx bx-code-alt" },
         { title: "Reading", desc: "Currently Reading: Fundamentals Of Aerospace Engineering 📚", icon: "bx bx-book" },
-        { title: "Music", desc: "Been listening to alot of English Rock Bands and Alt-Indielately 🎧", icon: "bx bx-headphone" },
-        { title: "Art", desc: "I unwind by sketching and writing 🎨", icon: "bx bx-brush" },
-        { title: "Gaming", desc: "Strategy, RPG and Open-World games 🎮", icon: "bx bx-game" }
+        { title: "Music", desc: "Fun fact my spotify age is 72", icon: "bx bx-headphone" },
+        { title: "Gaming", desc: "Strategy, RPG and Open-World games 🎮", icon: "bx bx-game" },
+        { title: "Playstation", desc: "Mikaiera_", icon: "bx bx-game" }
     ];
 
     let index = 0;
@@ -204,6 +206,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setInterval(updateInterest, 4000); 
-
-    // Spotify Addition (Next Update)
 });

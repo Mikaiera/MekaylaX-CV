@@ -2,13 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family:'Courier New';
+  color: #0a0a0a;
+  font-style: var(--dark);
+  
 }
 
 :root {
-    --primary: #E68A94;  
+    --primary: #f1a3ac;  
     --primary-light: #FCE5E7;
-    --primary-dark: #C75C6E;
+    --primary-dark: #d17987;
 
     --secondary: #F1E4D1;
     --accent: #262626;
@@ -29,10 +32,8 @@ img, picture, video, canvas, svg {
 
 body {
   cursor: none;
-  background-color: white;
   color: #2e2e2e;
   line-height: 1.6;
-  padding-top: 60px;
 }
 
 header {
@@ -41,12 +42,12 @@ header {
   left: 0;
   width: 100%;
   padding: 0 30px;
-  background: rgb(41, 41, 42);
+  background: #fbf5fc;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items:center;
   z-index: 100;
-  height: 100px; 
+  height: 45px; 
 }
 
 nav#nav {
@@ -68,56 +69,30 @@ nav#nav ul li a {
   font-size: 1rem;
   font-weight: bold;
   font-size: 1rem;
-  color: white; /* Default link color in header */
+  color: var(--dark);
   text-decoration: none;
   transition: 0.3s ease;
   padding: 5px 0;
 }
 
 a {
-  color: white;
+  color: #0a0a0a;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
-a:hover {
-  color: #e49fb3;
-  text-decoration: underline;
+nav#nav a:hover {
+  text-decoration: underline var(--primary-dark) 2px;
 }
 
-h1, h2{
+h2, h3, h4{
   margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e49fb3;
+  font-family:Courier, monospace;
+  font-weight: lighter;
 }
 
 ul {
   padding-left: 1.2rem;
-}
-
-.typing-container h2 {
-    font-size: 2.5rem;
-    color: #e49fb3;
-    margin-bottom: 1rem;
-}
-
-.typing-container h3 {
-    font-size: 1.5rem;
-    color: #9c27b0;
-    margin-bottom: 1.5rem;
-}
-
-.typing-container p {
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    color: #555;
-}
-
-.typing-container{
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .typing-text {
@@ -133,8 +108,13 @@ ul {
 
 /* Projects Section */
 .projects {
-    padding: 4rem 0;
+    margin: 1rem;
     text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .project-timeline {
@@ -228,17 +208,17 @@ ul {
 
 .project-info .tech-used {
     font-size: 0.9rem;
-    color: #666;
+    color:var(--dark);
     margin-bottom: 15px;
     font-weight: 500;
 }
 
 .project-description {
-    max-height: 0; /* Initially hidden */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     opacity: 0;
-    margin-top: 0; /* No margin when collapsed */
+    margin-top: 0;
     color: var(--text-color);
 }
 
@@ -249,7 +229,6 @@ ul {
     margin-bottom: 10px; 
     border-radius: 5px; 
     font-size: 0.8rem; 
-    font-weight: 600;
     text-transform: uppercase;
     color: white; 
     text-align: center;
@@ -257,18 +236,19 @@ ul {
 
 /* Colour for status */
 .project-status[data-status="complete"] {
-    background-color: #28a745;
+    background-color: #44d465;
+    color: var(--text);
 }
 .project-status[data-status="ongoing"] {
-    background-color: #ffc107;
-    color: #333;
+    background-color: #ffd760;
+    color: var(--primary-dark);
 }
 .project-status[data-status="planned"] {
-    background-color: #007bff;
+    background-color: #3e9bff;
 }
 
 .project-status[data-status="paused"] {
-    background-color: #6c757d; 
+    background-color: #7a8186; 
 }
 
 .project-card:hover .project-description {
@@ -292,13 +272,15 @@ ul {
     gap: 5px;
     border-radius: 5px;
     text-decoration: none;
-    background: var(--primary);
-    color: white;
+    background: transparent;
+    color: var(--primary-dark);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn.small-btn:hover {
-    background: var(--primary-dark);
+    background: white;
+    color: var(--primary-dark);
+    text-decoration: underline;
     transform: translateY(-2px);
 }
 
@@ -306,15 +288,11 @@ ul {
     font-size: 1rem;
 }
 
-.view-all-projects {
-    margin-top: 60px;
-}
-
 .btn.large-btn {
     padding: 12px 30px;
     font-size: 1.1rem;
     border-radius: 8px;
-    background: var(--primary);
+    background-color: white;
     color: white;
     text-decoration: none;
     display: inline-flex;
@@ -325,7 +303,32 @@ ul {
 }
 
 .btn.large-btn:hover {
-    background: var(--primary-dark);
+    border-color: var(--primary-dark) ;
     transform: translateY(-3px);
+    text-decoration: underline;
 }
 
+.custom-cursor {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out, opacity 0.2s ease-out; 
+    z-index: 9999; 
+    font-size: 30px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--light);
+}

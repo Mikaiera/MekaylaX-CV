@@ -38,16 +38,15 @@
 }
 
 .avatar {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
+    width: 300px;
+    height: 300px;
+    border-radius: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border: 5px solid white;
+    box-shadow: 0 15px 30px #0000001a;
+    border: 3px solid var(--primary-dark);
 }
 
 .avatar img {
@@ -58,17 +57,16 @@
 }
 
 .my-intro h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--primary-dark);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
-.my-intro h3 {
-    font-size: 1.8rem;
+.my-intro h4 {
+    font-size: 1rem;
     color: var(--dark);
     margin-bottom: 1.5rem;
-    font-weight: 600;
 }
 
 .my-intro p {
@@ -80,22 +78,21 @@
 
 .btn {
     display: inline-block;
-    background: var(--primary);
-    color: white;
+    color: var(--primary-dark);
     padding: 12px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
     border: 2px solid var(--primary);
-    box-shadow: 0 5px 15px rgba(228, 159, 179, 0.3);
+    box-shadow: 0 5px 15px #e49fb34d;
 }
 
 .btn:hover {
-    background: transparent;
-    color: var(--primary);
+    text-decoration: underline;
+    color: var(--text);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(228, 159, 179, 0.4);
+    box-shadow: 0 8px 20px #e49fb366;
 }
 
 /* About Me Section */
@@ -111,10 +108,10 @@
     max-width: fit-content;
     backdrop-filter: blur(2px);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 30px #00000014;
+    background: #ffffffd9;
     margin-bottom: 4rem;
-    border: 1px solid rgba(228, 159, 179, 0.2);
+    border: 1px solid #e49fb333;
 }
 
 .section-title {
@@ -178,7 +175,7 @@
     border-radius: 10px;
     width: 250px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px #0000001a;
     transition: transform 0.3s ease;
 }
 
@@ -221,6 +218,7 @@
 
 .contact-me {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 1rem;
     justify-content: center;
@@ -232,7 +230,6 @@
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: var(--primary-light);
     border-radius: 50%;
     color: var(--text-light);
     font-size: 1.8rem;
@@ -241,21 +238,27 @@
 }
 
 .contact-me a:hover {
-    background: var(--primary);
-    color: white;
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(228, 159, 179, 0.3);
+    box-shadow: 0 8px 20px #e49fb2c7;
+}
+
+#contact{
+    display: flex;
+    align-self: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-decoration: underline var(--primary);
 }
 
 /* Education Cards */
 .education {
-    background: rgba(255, 255, 255, 0.85);
+    background: #ffffffd9;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px #00000014;
     backdrop-filter: blur(5px);
     margin-bottom: 2rem;
-    border: 1px solid rgba(228, 159, 179, 0.2);
+    border: 1px solid #e49fb333;
 }
 .edu-cards-container {
     display: flex;
@@ -268,7 +271,7 @@
 .edu-card {
     background: var(--primary-light);
     border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 25px #00000014;
     overflow: hidden;
     transition: all 0.4s ease;
     border-left: 6px solid var(--primary);
@@ -298,36 +301,17 @@
     max-height: 0;
     overflow: hidden;
     padding: 0 1.5rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffffe6;
     color: var(--text);
     opacity: 0;
     transform: translateY(-10px);
     transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
-.edu-card .card-body {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.6s ease, opacity 0.4s ease;
-    padding: 0 20px;
-    pointer-events: none;
-}
-
 .edu-card.active .card-body {
-    max-height: 1500px; /* Large enough for content */
+    max-height: 1500px;
     opacity: 1;
     padding: 20px;
-    pointer-events: auto;
-}
-
-.edu-card .close-card {
-    display: none;
-    margin-top: 10px;
-}
-
-.edu-card.active .close-card {
-    display: block;
 }
 
 .degree {
@@ -342,8 +326,7 @@
     margin-bottom: 1rem;
 }
 
-.coursework h4,
-.key-projects h4 {
+.coursework h4{
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--primary-dark);
@@ -358,7 +341,6 @@
     font-size: 0.95rem;
     color: var(--text-light);
     position: relative;
-    margin-bottom: 0.3rem;
 }
 
 .coursework li::before {
@@ -369,43 +351,22 @@
     font-weight: bold;
 }
 
-.project-item {
-    background: var(--primary);
-    color: white;
-    padding: 0.7rem 1rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-}
-
 .tech-stack {
     font-style: italic;
-    color: var(--light);
+    color: var(--dark);
     font-size: 0.85rem;
 }
 
-.close-card {
-    margin-top: 1rem;
-    background: var(--primary-dark);
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.close-card:hover {
-    background: var(--accent);
-}
 
 /* Skills Wheel */
 .skills-wheel {
-    background: rgba(255, 255, 255, 0.85);
+    background: #ffffffd9;
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px #00000014;
     backdrop-filter: blur(5px);
     margin-bottom: 4rem;
-    border: 1px solid rgba(228, 159, 179, 0.2);
+    border: 1px solid #e49fb333;
 }
 
 .wheel-container {
@@ -421,11 +382,10 @@
     height: 300px;
     position: relative;
     border-radius: 50%;
-    background: var(--primary-light);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: rotate 40s linear infinite;
 }
 
@@ -437,14 +397,12 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
+    box-shadow: 0 0 10px var(--primary-dark);
     color: var(--primary-dark);
 }
 
@@ -452,8 +410,7 @@
     position: absolute;
     width: 80px;
     height: 80px;
-    background: var(--primary-dark);
-    color: white;
+    color: var(--text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -461,7 +418,7 @@
     text-align: center;
     font-size: 0.9rem;
     padding: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px var(--primary-dark);
     transition: all 0.3s;
     transform-origin: center;
 }
@@ -470,7 +427,7 @@
     transform: scale(1.2);
     z-index: 20;
     background: var(--primary-dark);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px #00000033;
 }
 
 .skills-content {
@@ -508,7 +465,7 @@
     padding: 8px 15px;
     border-radius: 30px;
     font-weight: 500;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 8px #0000000d;
     transition: all 0.3s;
 }
 
@@ -519,21 +476,9 @@
 }
 
 /* Certifications */
-.certifications {
-    margin-top: 3rem;
-}
-
-.certifications h3 {
-    color: var(--primary-dark);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
 .cert-item {
-    background: var(--primary-light);
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 10px;
     margin-bottom: 1rem;
     display: flex;
@@ -561,6 +506,7 @@
     text-align: center;
     margin-top: 10px;
     font-size: 0.85rem;
+    background-color: transparent;
     color: var(--primary-dark);
     text-decoration: none;
     cursor: pointer;
@@ -569,7 +515,7 @@
 
 .see-more:hover {
     color: var(--dark);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* Smooth Rotate Animation */

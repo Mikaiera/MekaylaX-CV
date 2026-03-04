@@ -3,8 +3,42 @@
     main {
         padding: 4rem 5%;
     }
+
     .custom-cursor {
-        display: flex; /* Display as flex on desktops */
+        display: flex;
+    }
+
+    .project-timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 60px auto;
+        border-top: 2px solid var(--primary-light);
+        padding-top: 40px;
+    }
+
+    .project-timeline::after {
+        display: none;
+    }
+
+    .project-timeline .timeline-item {
+        width: 100%;
+        left: 0;
+        padding: 0;
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    .timeline-dot{
+        display: none;
+    }
+
+    .project-timeline{
+        top: -15px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
     }
 }
 /* Tablets: 768px to 1023px */
@@ -203,7 +237,10 @@
   .timeline-content {
     padding: 20px;
   }
-
+  .timeline-item {
+    width: calc(50% - 15px); /* 2 cards per row */
+    margin-bottom: 40px;
+  }
   .project-image {
     height: 180px;
   }
@@ -257,9 +294,10 @@
         top: 0;
         left: 0;
         width: 100%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        background: rgb(41, 41, 42);
+        box-shadow: 0 2px 8px rgba(80, 7, 64, 0.2);
+        background: #fbf5fc;
         z-index: 100;
+        height: 55px;
     }
 
     header h2 { 
@@ -272,30 +310,6 @@
     .custom-cursor {
         display: none;
         pointer-events: none;
-    }
-
-    /* Nav Toggle (Mobile) */
-    .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 150;
-    }
-
-    .nav-toggle .hamburger {
-        width: 100%;
-        height: 3px;
-        background: white;
-        border-radius: 10px;
-        transition: all 0.3s linear;
-        position: relative;
-        transform-origin: 1px;
     }
 
     .nav-toggle.active .hamburger:nth-child(1) {
@@ -328,7 +342,7 @@
 .nav-toggle .hamburger {
     width: 100%;
     height: 3px;
-    background: white;
+    background: #C75C6E;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -348,14 +362,15 @@
 
 /* Nav Container */
   nav#nav {
-      position: fixed; /* Better than absolute for full-screen menus */
+      position: fixed;
       top: 0;
       left: 0;
-      width: 80%; /* Better responsiveness */
+      width: 65%; 
       height: 100vh;
-      background-color: var(--dark);
+      background-color: rgba(192, 183, 183, 0.301);
+      backdrop-filter: blur(5px);
       padding: 100px 30px 30px 30px;
-      box-shadow: 0 0 10px #ea89ea;
+      box-shadow: 0 0 10px #f3aef3;
       transform: translateX(-100%);
       transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
       overflow-y: auto;
@@ -384,7 +399,7 @@
       font-size: 1rem;
       padding: 10px 0;
       display: block;
-      color: white;
+      color: black;
       text-decoration: none;
   }
 
@@ -604,7 +619,7 @@
         max-width: 95%;
     }
     .project-timeline::after {
-        content: none;
+        display: none;
     }
 
     .timeline-item {
@@ -683,22 +698,4 @@
         padding: 10px 25px;
         font-size: 1rem;
     }
-}
-
-.custom-cursor {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s ease-out, opacity 0.2s ease-out; 
-    z-index: 9999; 
-    font-size: 30px;
-    line-height: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
 }
